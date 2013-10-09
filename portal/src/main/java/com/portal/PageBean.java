@@ -4,10 +4,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
-import org.jboss.logging.Logger;
-
 public class PageBean {
-	public Logger log = Logger.getLogger(this.getClass());
+
 	protected HttpServletRequest request = null;
 	protected ServletContext context = null;
 	protected boolean isLoggedIn;
@@ -16,7 +14,7 @@ public class PageBean {
 	public PageBean() {}
 
 	public boolean process() {
-		log.debug("Page opened");
+
 		if (request == null || context == null) { throw new ExceptionInInitializerError("Wrong init of bean params"); }
 		Boolean loggedIn = (Boolean)request.getSession().getAttribute("logged_in");
 		
@@ -43,13 +41,12 @@ public class PageBean {
 	}
 	
 	private String getUserFromCookie() {
-		log.debug("check cookie and logg user in");
+
 		String cookieName = "_AUTH";
 		Cookie cookies[] = request.getCookies();
 		if (cookies != null) {
 			for (Cookie c : cookies) {
 				if (c.getName().equals(cookieName)) {
-					log.debug("We have Auth cookie");
 					return c.getValue();
 				}
 			}

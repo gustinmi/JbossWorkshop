@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jboss.logging.Logger;
-
 import com.portal.Database;
 
 @WebServlet(name = "UserDetailsServlet", urlPatterns = { "/UserDetails" })
