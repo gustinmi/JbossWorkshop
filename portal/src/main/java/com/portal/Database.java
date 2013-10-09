@@ -142,7 +142,7 @@ public class Database {
                 output.append(getString(rs.getString("name")));
                 output.append("\"");
                 output.append("}");
-                if (rs.next()) {
+                if (!rs.isLast()) {
                 	output.append(",");
                 }
             }
