@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table class="enter">
+    <tbody>
+        <tr>
+            <td><label for="ime">Ime</label>:</td>
+            <td><input id="ime" name="ime" type="text" /></td>
+        </tr>
+        <tr>
+            <td><label for="geslo">Geslo</label>:</td>
+            <td><input id="geslo" name="geslo" type="password" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" id="register" value="Prijava" /></td>
+        </tr>
+    </tbody>
+    <tfoot>
+    	<span id="err"></span>
+    </tfoot>
+</table>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function () {
+	$("input#register").click(function(e){
+        $.ajax({
+            type: "POST",
+            url: "LoginApi",
+            data: {'ime': $("input#ime").val(), "geslo": $("input#geslo").val()},
+            dataType: "json",
+            success: function (data) {
+                if (data && data['status'] && data['status']==='ok') {
+                    window.location.href='home.jsp';
+                }else{
+					$("span.err").text("Napaka pri prijavi");                    
+                }
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

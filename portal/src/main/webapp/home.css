@@ -1,0 +1,33 @@
+div.branches {
+    padding: 5px;
+}
+
+div.branches table.grid {
+    border: 1px solid #dcdcdc;
+    /*border-collapse: collapse;*/
+    empty-cells: show;
+    width: 610px;
+    padding: 5px;
+}
+
+div.branches table.grid caption {
+    text-align: left;
+    padding: 5px;
+}
+
+div.branches table.grid th,div.branches table.grid tr,div.branches table.grid td {
+    text-align: left;
+}
+
+div.branches table.grid th {
+    width: 200px;
+}
+
+div.branches table.grid thead,div.branches table.grid tfoot {
+    color: #ffffff;
+    background: black;
+}
+
+div.menu.footer {
+    margin-top:20px;
+}
