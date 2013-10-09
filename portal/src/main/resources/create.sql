@@ -6,9 +6,5 @@ CREATE TABLE `users` (
     UNIQUE INDEX `name` (`name`)
 );
 
-CREATE TABLE `log` (
-    `id` INT(10) NOT NULL AUTO_INCREMENT,
-    `message` VARCHAR(50) NOT NULL DEFAULT '0',
-    `timestamp` TIMESTAMP NOT NULL,
-    PRIMARY KEY (`id`)
-);
+INSERT INTO `users` (`id`, `name`, `password`) VALUES (1, 'janez', 'janez');
+INSERT INTO `users` (`id`, `name`, `password`) VALUES (2, 'miha', 'miha');

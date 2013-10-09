@@ -1,8 +1,8 @@
-div.branches {
+div.users {
     padding: 5px;
 }
 
-div.branches table.grid {
+div.users table.grid {
     border: 1px solid #dcdcdc;
     /*border-collapse: collapse;*/
     empty-cells: show;
@@ -10,24 +10,39 @@ div.branches table.grid {
     padding: 5px;
 }
 
-div.branches table.grid caption {
+div.users table.grid caption {
     text-align: left;
     padding: 5px;
 }
 
-div.branches table.grid th,div.branches table.grid tr,div.branches table.grid td {
+div.users table.grid th,div.users table.grid tr,div.users table.grid td {
     text-align: left;
 }
 
-div.branches table.grid th {
+div.users table.grid th {
     width: 200px;
 }
 
-div.branches table.grid thead,div.branches table.grid tfoot {
+div.users table.grid thead,div.users table.grid tfoot {
     color: #ffffff;
     background: black;
 }
 
 div.menu.footer {
     margin-top:20px;
+}
+
+div.header span {
+	font-size: larger;
+}
+
+div.edit {
+	display: none;
+	padding: 20px;
+	width: 500px;
+	position: fixed;
+	top: 150px;
+	left: 5px;
+	z-index: 1000;
+	border: 2px solid black;
 }

@@ -10,8 +10,7 @@
 boolean ok = pageBean.process();
 if (ok) { //render page only if user is logged in
 %>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Portal</title>
@@ -19,12 +18,13 @@ if (ok) { //render page only if user is logged in
 </head>
 <body>
  	<div class="menu header">
-        <a href="#" id="logout">logout</a>
+ 		<span>Logged in <b><%=pageBean.getUsername()%></b></span>
+        <a href="#" id="logout">Logout?</a>
     </div>
-    <h5>Logged in <%=pageBean.getUsername()%></h5>
+    
     <div class="users">
     <table class="grid">
-        <caption>Some users</caption>
+        <caption>Table of users from database</caption>
         <thead>
         <tr>
             <th>User ID</th>
@@ -35,8 +35,21 @@ if (ok) { //render page only if user is logged in
         </tbody>
     </table>
     </div>
+    
+    <div class="edit">
+		<div>    
+			<label for="geslo">Novo ime</label>
+			<input id="name" type="text" />
+		</div>
+		<div>
+			<input type="button" id="update" value="Popravi" />
+		</div>
+    </div>
+    
+    
     <script src="<%=request.getContextPath()%>/js/jquery.js"></script>
 	<script>
+		//this is a way to get Java variables to Javascript on client (if you need it) 
 	    var USER = '<%=pageBean.getUsername()%>', CONTEXT_PATH = '<%=request.getContextPath()%>';
 	</script>
 	<script src="<%=request.getContextPath()%>/home.js"></script>
