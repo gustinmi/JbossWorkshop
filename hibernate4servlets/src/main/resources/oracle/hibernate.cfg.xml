@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+        <property name="hibernate.connection.username">USER_NAME</property>
+        <property name="hibernate.connection.password">PASSWORD</property>
+        <property name="hibernate.default_schema">SHEMA_NAME</property>
+        
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle11g</property>
+        
+        <!-- Drop and re-create the database schema on startup--> 
+        <property name="hbm2ddl.auto">create</property>
+        
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        
+        <!-- second-level cache -->
+        <property name="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</property>
+        <property name="hibernate.cache.provider_configuration_file_resource_path">/ehcache.xml</property>
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+        
+    </session-factory>
+</hibernate-configuration>
