@@ -34,6 +34,15 @@ public class HibernateSessionFilter implements Filter {
         Session currentHbmSession = null;
         try {
             log.trace("Opening hbm session");
+            
+            // If you set hibernate.current_session_context_class to thread and then implement something like
+            // a servlet filter that opens the session then you can access that session anywhere else by using
+            // the SessionFactory.getCurrentSession().
+            // You should never use "one session per web app" - session is not a thread safe object - cannot be shared by multiple threads.
+            // You should always use "one session per request" or "one session per transaction"
+            
+            //DO NOT USE !!!!!!  HibernateUtil.getSessionFactory().openSession(); Session is already opened
+            
             currentHbmSession = HibernateSessionFactory.getSessionFactory().getCurrentSession();
 
             log.trace("Begginging hbm transaction");
