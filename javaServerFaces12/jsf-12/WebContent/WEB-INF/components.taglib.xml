@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE facelet-taglib PUBLIC "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+                                "http://java.sun.com/dtd/facelet-taglib_1_0.dtd">
+<facelet-taglib>
+ <namespace>http://antaranga.com/jsf-composite_1_0</namespace>
+ <tag>
+  <tag-name>inputField</tag-name>
+  <source>../WEB-INF/composite/inputField.jspx</source>
+ </tag>
+ <tag>
+  <tag-name>menuComponent</tag-name>
+  <source>../WEB-INF/composite/menu.jspx</source>
+ </tag>
+</facelet-taglib>

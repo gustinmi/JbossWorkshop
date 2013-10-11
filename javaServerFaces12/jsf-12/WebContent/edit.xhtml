@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:cc="http://antaranga.com/jsf-composite_1_0"
+>
+<f:loadBundle basename="i18n.messages" var="msg" />
+<ui:composition template="/master.xhtml">
+		<ui:define name="toolbar"><h:commandButton id="btnSend" value="#{msg['btn.send']}" action="#{editBean.submit}" /></ui:define>
+		<ui:define name="navigation">
+			<cc:menuComponent page="edit" role="userOptions" ></cc:menuComponent>
+		</ui:define>
+		<ui:define name="body">
+		  	<fieldset>
+		  		<legend>Editing item #{editBean.selectedItem.key}</legend>
+		  		<cc:inputField label="#{msg['lbl.edit']}" id="txtKey" value="#{editBean.selectedItem.key}" styleClass="input" disabled="true" readonly="true" />
+				<cc:inputField label="#{msg['lbl.edit']}" id="txtValue" value="#{editBean.selectedItem.value}" styleClass="input" disabled="false" readonly="false" />
+			</fieldset>
+		</ui:define>
+		<ui:define name="pageFooter">
+			The time is: #{currentTimeBean.getTime}
+			</ui:define>
+</ui:composition>
+
+</html>

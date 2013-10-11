@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j">
+
+<f:loadBundle basename="i18n.messages" var="msg" />	
+
+This is the navigation component that is basic building block of each portal page. It displays the list of possible navigation items.
+The components needs to be feed 
+
+	<ui:composition>
+	  <p>Available items</p>
+	  <ul id="mainMenu">
+	  <c:forEach var="link" items="#{menuOptions[role]}">
+		<c:choose>
+		  <c:when test="#{link.text eq page}">
+			<li class="current">#{link.text}</li>
+		  </c:when>
+		  <c:otherwise>
+			<li>
+				<h:commandLink action="#{menuOptions['navigate']}" value=" #{link.text} ">
+					<f:setPropertyActionListener target="#{menuOptions.selectedOption}" value="#{link}" />
+				</h:commandLink>
+			</li>
+		  </c:otherwise>
+		</c:choose>
+	  </c:forEach>
+	  </ul>
+	  
+	</ui:composition>
+
+
+</html>

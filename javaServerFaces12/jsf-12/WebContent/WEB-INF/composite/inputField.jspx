@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j">
+
+<f:loadBundle basename="i18n.messages" var="msg" />	
+
+<ui:composition>
+	<h:panelGrid id="cc_#{id}" columns="3" cellpadding="1" cellspacing="1" columnClasses="fieldLabel,fieldValue,fieldError">
+		<h:outputLabel id="lbl_#{id}" value="#{label}" for="#{id}" />
+		<h:inputText id="#{id}" value="#{value}" styleClass="#{styleClass}" disabled="#{disabled}" readonly="#{readonly}" size="40" onblur="validateNumber(this)">
+			<ui:insert />		
+    	</h:inputText>
+		<h:panelGroup id="err_#{id}" style="display: none">
+			<h:outputLabel value="Correct form is: 121034" styleClass="error-message"/>
+		</h:panelGroup>
+	</h:panelGrid>
+</ui:composition>
+</html>

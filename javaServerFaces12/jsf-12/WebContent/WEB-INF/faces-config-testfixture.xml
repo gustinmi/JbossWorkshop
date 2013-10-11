@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+ <managed-bean>
+  <managed-bean-name>tableItem1</managed-bean-name>
+  <managed-bean-class>com.antaranga.jsf.beans.TableItem</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+   <property-name>key</property-name>
+   <property-class>java.lang.String</property-class>
+   <value>1</value>
+  </managed-property>
+  <managed-property>
+   <property-name>value</property-name>
+   <property-class>java.lang.String</property-class>
+   <value>The first item</value>
+  </managed-property>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>tableItem2</managed-bean-name>
+  <managed-bean-class>com.antaranga.jsf.beans.TableItem</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+   <property-name>key</property-name>
+   <property-class>java.lang.String</property-class>
+   <value>2</value>
+  </managed-property>
+  <managed-property>
+   <property-name>value</property-name>
+   <property-class>java.lang.String</property-class>
+   <value>The second item</value>
+  </managed-property>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>tableItem3</managed-bean-name>
+  <managed-bean-class>com.antaranga.jsf.beans.TableItem</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+  <managed-property>
+   <property-name>key</property-name>
+   <property-class>java.lang.String</property-class>
+   <value>3</value>
+  </managed-property>
+  <managed-property>
+   <property-name>value</property-name>
+   <property-class>java.lang.String</property-class>
+   <value>The third item</value>
+  </managed-property>
+ </managed-bean>
+</faces-config>

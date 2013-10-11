@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 5px 10px;
+	padding-left: 5px;
+	padding-right: 0;
+	padding-top: 10px;
+	font-size: 11px;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+
+.header {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+.bottom {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	text-align: center;
+	vertical-align: middle;
+	color: #8E969D;
+}
+
+* {
+	font-family: Verdana, Arial, sans-serif;
+}
+
+fieldset {
+	border: 1px solid #ffffff;
+	background: #ffffff repeat;
+}
+
+legend {
+	color: #8E969D;
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+.fieldLabel {
+	font-size: 12px;
+	vertical-align: middle;
+	text-align: left;
+	width: 120px;
+}
+
+.fieldValue {
+	font-size: 12px;
+	vertical-align: middle;
+	width: 220px;
+}
+
+.fieldError {
+	font-size: 12px;
+	color: red;
+	text-align: left;
+	vertical-align: middle;
+	width: 320px;
+}
+
+li {
+	margin-top:2px;
+	margin-bottom: 2px;
+}
+
+.current{
+	color: red;
+}
+
+/* HTML elements style */
+input.btn {
+	color: #050;
+	font: bold small 'trebuchet ms', helvetica, sans-serif;
+}
+
+input {
+	font-size: 12px;
+}
+
+table {
+	padding-left: 0.5px;
+}
+
+textarea {
+	font-size: 11px;
+}
+
+select {
+	width: 230px;
+}

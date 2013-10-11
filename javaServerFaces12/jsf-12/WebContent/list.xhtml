@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:cc="http://antaranga.com/jsf-composite_1_0"
+>
+<f:loadBundle basename="i18n.messages" var="msg" />
+<ui:composition template="/master.xhtml">
+	<ui:define name="toolbar">My toolbar</ui:define>
+	<ui:define name="navigation">
+		<cc:menuComponent page="list" role="userOptions" ></cc:menuComponent>
+	</ui:define>
+	<ui:define name="body">
+	  	<fieldset>
+	  		<legend>Seznam </legend>
+			<h:dataTable value="#{listBean.itemList}" var="item">
+				<h:column>
+					<f:facet name="header">
+						<h:column>
+							<h:outputText value="Id"></h:outputText>
+						</h:column>
+					</f:facet>
+					<h:outputText value="#{item.key}"></h:outputText>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:column>
+							<h:outputText value="Title"></h:outputText>
+						</h:column>
+					</f:facet>
+					<h:outputText value="#{item.value}"></h:outputText>
+				</h:column>
+				<h:column>
+				<f:facet name="header">
+					<h:column>
+						<h:outputText value="Actions"></h:outputText>
+					</h:column>
+				</f:facet>
+				<h:panelGrid columns="2">
+					<h:commandLink value="edit" action="edit">
+						<f:setPropertyActionListener target="#{editBean.selectedItem}" value="#{item}" />
+					</h:commandLink>					
+					<h:commandLink value="delete" action="#{listBean.delete}">
+						<f:setPropertyActionListener target="#{listBean.selectedItem}" value="#{item}" />
+					</h:commandLink>
+				</h:panelGrid>
+			</h:column>
+			</h:dataTable>
+		</fieldset>
+	</ui:define>
+	<ui:define name="pageFooter">My footer</ui:define>
+</ui:composition>
+
+</html>
