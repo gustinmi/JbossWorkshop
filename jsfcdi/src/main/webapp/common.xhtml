@@ -25,6 +25,14 @@
     </ui:remove>
     <br/>
     <h:outputLabel value="Greeting from named producer method #{configBean.getString('some.key','not know')}" />
+    <br/>
+    <ui:remove>
+        From Singleton
+    </ui:remove>
+    <br/>
+    <h:outputLabel value="#{mySingleton.someValue}" />
+    <br/>
+    
     <h:form id="myForm" prependId="false">
       <h:dataTable value="#{tableModel}" var="it" style="width:100%;">
          <h:column>
