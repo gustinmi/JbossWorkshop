@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+    	<title>Demo page</title>    
+    </h:head>
+<body>
+<table>
+<tbody>
+
+	<h:outputLabel value="Hello" />
+	<br/>
+    <h:outputLabel value="#{CommonCtrl.greeting}" />
+    
+    <ui:remove>
+        Property via bean method
+    </ui:remove>
+    <br/>
+    <h:outputLabel value="#{CommonCtrl.configValue}" />
+    
+    <ui:remove>
+        Directly via @named. You can also call methods
+    </ui:remove>
+    <br/>
+    <h:outputLabel value="Greeting from named producer method #{configBean.getString('some.key','not know')}" />
+    <h:form id="myForm" prependId="false">
+      <h:dataTable value="#{tableModel}" var="it" style="width:100%;">
+         <h:column>
+         	<f:facet name="header">
+         		<h:outputText value="ID" />
+         	</f:facet>
+             <h:outputText value="#{it.id}" />
+         </h:column>
+         <h:column>
+         	<f:facet name="header">
+         		<h:outputText value="NAME" />
+         	</f:facet>
+             <h:outputText value="#{it.name}" />
+         </h:column>
+         
+         <h:column>
+         	<f:facet name="header">
+         		<h:outputText value="ODPRI" />
+         	</f:facet>
+             <h:button outcome="details?item=#{it.id}" value="Prikaži">
+             	<f:param name="cid" value="#{CommonCtrl.conversation.id}" />
+             </h:button>
+         </h:column>
+         
+	 </h:dataTable>					                
+	</h:form>
+</tbody>
+</table>
+</body>
+		
+</html>

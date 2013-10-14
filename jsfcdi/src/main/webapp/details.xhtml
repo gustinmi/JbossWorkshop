@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+    	<title>Demo page</title>    
+    </h:head>
+  
+
+<body>
+
+  <h:form id="myForm" prependId="false">
+		<h:outputLabel value="Odprli smo: " />
+		<h:outputLabel value="#{selectedItem}" />
+		<h:commandButton action="#{quitUrl}"  value="Nazaj via java code" styleClass="btn" />
+		<h:button outcome="common?faces-redirect=true" value="Nazaj via outcome" />
+	</h:form>
+
+</body>
+		
+</html>
