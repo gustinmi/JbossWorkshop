@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+    xmlns="java.sun.com/xml/ns/javaee"
+    xmlns:web="java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    xmlns:xsi="w3.org/2001/XMLSchema-instance" xsi:schemaLocation="java.sun.com/xml/ns/javaee java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="IntelliServer"
+    version="3.0">
+    
+    <display-name>demo app</display-name>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    
+</web-app>
+
+
