@@ -5,11 +5,7 @@
 <html>
 <body>
 
-<!-- baza 1 -->
-<%= PoolBaza.instance.get() %>
-
-<!-- BazaNavadna.instance.get() -->
-
+<%=NavadnaBaza.instance.get()%>
 
 </body>
 </html>
