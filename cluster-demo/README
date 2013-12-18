@@ -1,3 +1,20 @@
 Cluster demo
-===================
+===================================================================
 Demo application for testing session replication in cluster mode
+
+
+Apache proxy setup
+---------------------------------------------
+
+Enable mod_expire, mod_headers, mod_prohx, mod_proxy_http
+
+Put this inside your virtaul host
+
+<filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+	RewriteEngine On
+    RewriteRule ^/assets/(.*)\.(gif|png)$ $1\.$2 [QSA,NC,L]
+    Header set Cache-Control "max-age=290304000, public"
+</filesMatch>
+
+ProxyPass /app http://localhost:8080/cluster-demo                                                                                                                                                                                
+ProxyPassReverse /app http://localhost:8080/cluster-demo
