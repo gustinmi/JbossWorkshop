@@ -7,8 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class NavadnaBaza {
+	
+	// singleton 
+	
 	public static final NavadnaBaza instance = new NavadnaBaza();
 
+	// private 
+	
 	private NavadnaBaza() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");	   
@@ -16,9 +21,10 @@ public class NavadnaBaza {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public Connection getConnection() throws SQLException {
 		try {
+			//													  jndi sintaksa
 			return DriverManager.getConnection("jdbc:mysql://localhost/information_schema?autoReconnect=true", "root", "jboss");
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -30,14 +36,15 @@ public class NavadnaBaza {
 		ResultSet rs = null;
 		PreparedStatement statement = null;
 		Connection connection = null;
-		String out = null;
+		StringBuilder out = new StringBuilder();
 		try {
 			final String sql = "SELECT COMMENT FROM ENGINES";
 			connection = NavadnaBaza.instance.getConnection();
 			statement = connection.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			rs = statement.executeQuery();
 			while (rs.next()) { 
-				out += rs.getString(1);
+				out.append("\n");
+				out.append(rs.getString(1));
 			}
 			
 		} catch (SQLException e) {
@@ -68,7 +75,7 @@ public class NavadnaBaza {
 				connection = null;
 			}
 		}
-		return out;
+		return out.toString();
 	}
     
 }
