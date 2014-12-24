@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: 
+Dependencies: deployment.mysql-connector-java-5.1.26-bin.jar:main

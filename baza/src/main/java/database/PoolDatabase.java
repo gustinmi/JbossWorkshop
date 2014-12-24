@@ -1,35 +1,26 @@
-package baza;
+package database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.Calendar;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class PoolBaza {
+public class PoolDatabase {
 	
-	public static final PoolBaza instance = new PoolBaza();
+	public static final PoolDatabase instance = new PoolDatabase();
 	private final DataSource dataSource;
 
-	private PoolBaza() {
+	private PoolDatabase() {
 		InitialContext ctx = null;
 		try {
 			ctx = new InitialContext();
-			dataSource = (DataSource) ctx.lookup("java:jboss/datasources/housingDS");
+			dataSource = (DataSource) ctx.lookup("java:jboss/MySqlDs0");
 		} catch (NamingException e) {
 			final String reason = "Failed to retrieve the datasource from the context: " + e.toString();
-			
 			throw new IllegalStateException(reason, e);
 		}
 	}
@@ -38,7 +29,6 @@ public class PoolBaza {
 		try {
 			return dataSource.getConnection();
 		} catch (SQLException e) {
-			
 			throw e;
 		}
 	}
@@ -47,13 +37,14 @@ public class PoolBaza {
 		ResultSet rs = null;
 		PreparedStatement statement = null;
 		Connection connection = null;
-		String out = null;
+		String out = "";
 		try {
-			final String sql = "SELECT COMMENT FROM ENGINES";
-			connection = PoolBaza.instance.getConnection();
+			final String sql = "SELECT COMMENT FROM ENGINES ORDER BY RAND()";
+			connection = PoolDatabase.instance.getConnection();
 			statement = connection.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			rs = statement.executeQuery();
 			while (rs.next()) { 
+				out += "<br>";
 				out += rs.getString(1);
 			}
 		} catch (SQLException e) {
@@ -87,7 +78,4 @@ public class PoolBaza {
 		return out;
 	}
 	
-
-	
 }
-

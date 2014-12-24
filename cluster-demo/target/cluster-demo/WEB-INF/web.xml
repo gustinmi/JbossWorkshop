@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+                         "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+ <display-name>Archetype Created Web Application</display-name>
+ <distributable/>
+ <context-param>
+  <param-name>static_url</param-name>
+  <param-value>/assets/</param-value>
+  <!--param-value>/cluster-demo/</param-value-->
+ </context-param>
+</web-app>

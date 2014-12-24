@@ -1,4 +1,4 @@
-package baza;
+package database;
 
 import static org.junit.Assert.*;
 
@@ -6,11 +6,12 @@ import java.io.Console;
 
 import org.junit.Test;
 
-public class TestBazaNavadni {
+public class TestDriverManagerDatabase {
 
 	@Test
 	public void test() {
-		String test = NavadnaBaza.instance.get();
+		String test = DriverManagerDatabase.instance.get();
+		assertTrue(test!=null);
 		System.out.print(test);
 	}
 

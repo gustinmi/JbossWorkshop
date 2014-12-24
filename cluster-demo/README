@@ -6,7 +6,7 @@ Demo application for testing session replication in cluster mode
 Apache proxy setup
 ---------------------------------------------
 
-Enable mod_expire, mod_headers, mod_prohx, mod_proxy_http
+Enable mod_expire, mod_headers, mod_prohy, mod_proxy_http
 
 Put this inside your virtaul host
 
