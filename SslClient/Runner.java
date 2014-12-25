@@ -102,7 +102,6 @@ public class Runner {
         final InputStream is;
         try {
             is = new FileInputStream(jksPath);
-            
         }
         catch (FileNotFoundException e) {
             final String message = "Key store file not found";
@@ -194,7 +193,6 @@ public class Runner {
             }
         };
 
-
     /**
        SSL utilitites to overcome so of the problems with self signed certificate authorities
      */
@@ -220,7 +218,6 @@ public class Runner {
          * Thrust managers.
          */
         private static TrustManager[] _trustManagers;
-
 
         /**
          * Set the default Hostname Verifier to an instance of a fake class that
@@ -499,7 +496,4 @@ public class Runner {
             } // getAcceptedIssuers
         } // FakeX509TrustManager
     } //
-
-    
-
 }
