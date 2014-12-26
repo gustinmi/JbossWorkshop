@@ -22,7 +22,7 @@ public class HelloWorld {
 	public String sayHelloParams(@WebParam(name="id") String id, @WebParam(name="contents") byte[] metadata) {
 		FileOutputStream stream = null;
 		try {
-			stream = new FileOutputStream("/home/mitja/test.txt");
+			stream = new FileOutputStream("/home/jboss/test.txt");
 		    stream.write(metadata);
 		} catch (IOException e) {
 			e.printStackTrace();

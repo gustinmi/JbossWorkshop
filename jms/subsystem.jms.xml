@@ -1,0 +1,17 @@
+        <subsystem xmlns="urn:jboss:domain:messaging:1.4">
+            <hornetq-server>
+
+                <security-enabled>false</security-enabled>
+
+                <jms-destinations>
+                    <jms-topic name="myTopic">
+                        <entry name="java:jboss/topics/myTopic"/>
+                    </jms-topic>
+                    <jms-queue name="testQueue">
+                        <entry name="queue/test"/>
+                        <entry name="java:jboss/exported/jms/queue/test"/>
+                    </jms-queue>
+                </jms-destinations>
+                
+            </hornetq-server>
+        </subsystem>

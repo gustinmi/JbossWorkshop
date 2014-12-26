@@ -34,7 +34,7 @@ Datasource needs driver jar. You deploy it as jar or as module.
 
 1. If driver is not JDBC4 compliant, you need to add full qualified driver name to META-INF/service/java.Sql.Driver file (create it)
 
-2. If it's JDBC4 compliant, simply deploy it.
+2. If it is JDBC4 compliant, simply deploy it.
 
 ### Deploy as module
 
