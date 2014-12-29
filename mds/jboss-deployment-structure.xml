@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- Adding modules as dependencies -->
+
+
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.0">
+<deployment>
+    <dependencies>
+        <module name="deployment.mysql.jar" />
+    </dependencies>
+</deployment>
+</jboss-deployment-structure>
+
+<!-- Excluding modules  -->
+
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
+    <deployment>
+        <exclusions>
+            <module name="org.apache.log4j"/>
+            <module name="org.apache.commons.logging"/>
+        </exclusions>
+    </deployment>
+</jboss-deployment-structure>

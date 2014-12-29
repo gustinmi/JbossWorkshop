@@ -1,0 +1,51 @@
+Izpitna vprašanja
+==============================
+
+* install
+  - install 3 instances of jboss eap 6
+  - change startup arguments to not have any port conflicts
+  - change configuration files to not have port conflicts
+
+* logging
+  - change log level to highest level of debug output
+  - send specific class output to a separate log
+  - configure log file rotation
+  - change server log file to a file in your home directoy
+
+* datasource
+  - add a postgres database
+  - confirm that it works
+
+* JMS
+  - using the cli add a queue
+  - using the cli add a topic
+  - using the cli secure the new queue and topic with a password
+
+* domain
+
+* cluster
+  - configure TCP-based cluster of 3
+  - can two different eap versions be in same cluster?
+
+* JVM
+  - decrease minimum memory size
+
+* remove unnecessary services
+
+* override web context root
+
+* jmxconsole  (note export JAVA_HOME=`/usr/libexec/java_home -v1.6`)
+
+* CLI
+  - dmr - dynamic model representation
+  - domain:
+    * deploy/undeploy to server groups 
+      deploy /Users/dougtoppin/Desktop/JBoss/Deployments/Study/JB248/labs/Lab03_03/version.war --server-groups=other-server-group
+      /server-group=other-server-group/deployment=version.war:remove
+      deploy version.war
+
+* server groups
+  - create group spanning multiple hosts
+
+* virtual servers
+  - configure two diff urls on the same EAP instance

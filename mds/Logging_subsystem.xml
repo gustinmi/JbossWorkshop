@@ -1,0 +1,20 @@
+# Logging subsystem
+
+Available logging options
+
+* JBoss Logging - included with JBoss Enterprise Application Platform 6
+
+* Apache Commons Logging - http://commons.apache.org/logging/
+
+* Simple Logging Facade for Java (SLF4J) - http://www.slf4j.org/
+
+* Apache log4j - http://logging.apache.org/log4j/1.2/
+
+* Java SE Logging (java.util.logging) - http://download.oracle.com/javase/6/docs/api/java/util/logging/package-summary.html
+
+# Boot logging
+
+
+JBoss Log Manager does not pick up your logging configuration and your own logging JARs will work as normal.
+
+	/standalone.sh -Dorg.jboss.as.logging.per-deployment=false
