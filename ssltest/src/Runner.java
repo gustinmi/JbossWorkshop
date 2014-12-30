@@ -22,22 +22,22 @@ import javax.net.ssl.X509TrustManager;
 
 public class Runner {
 
-	private static final String certificatePassword = "pisR6";
+	private static final String certificatePassword = "myPass";
     private static String serverURL;
     private static KeyStore keyStore;
     private static SSLSocketFactory socketFactory;
 
     public static void main(String[] args) {
 
-       //https://obravnave.mp.gov.si:443/asod-webapp/index.html
-       ///home/mitja/Work/asoda/asod-webapp/src/main/resources/AsodClientKeystore.jks
+       //https://IP:443/www.github.com
+       ///MyClientKeystore.jks
         
-       String jksPath = args[0]; // "c:\\cygwin\\home\\HP\\code\\Coding\\coding\\asod\\ssltest\\PisRsKeystore.jks";
+       String jksPath = args[0]; 
        System.out.println("Keystore path is: " + jksPath);
        keyStore = createKeyStore(jksPath);
        socketFactory = createSocketFactory();
        System.out.println("Keystore je:" + keyStore);
-       serverURL = "https://www.sodnapraksa.si/api2/mainSearch/?apiKey=d5f0bfee8b3d&connection2=EZ+23a&page=0&itemsPerPage=20"; 
+       serverURL = "https://www.github.com"; 
        System.out.println("server je:" + serverURL);
        SSLUtilities.trustAllHostnames();
        SSLUtilities.trustAllHttpsCertificates();
