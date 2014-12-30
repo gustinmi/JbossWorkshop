@@ -1,0 +1,21 @@
+<jboss-deployment-structure>
+    <deployment>
+        <!-- Exclusions allow you to prevent the server from automatically adding some dependencies     -->
+        <exclusions>
+            <module name="org.slf4j" />
+            <module name="org.slf4j.impl" />
+            <!-- module name="org.jboss.resteasy.resteasy-atom-provider" />
+			<module name="org.jboss.resteasy.resteasy-cdi" />
+			<module name="org.jboss.resteasy.resteasy-jaxrs" />
+			<module name="org.jboss.resteasy.resteasy-jaxb-provider" />
+			<module name="org.jboss.resteasy.resteasy-jackson-provider" />
+			<module name="org.jboss.resteasy.resteasy-jsapi" />
+			<module name="org.jboss.resteasy.resteasy-multipart-provider" />
+			<module name="org.jboss.resteasy.async-http-servlet-30" /-->
+        </exclusions>
+        <dependencies>
+        	<module name="si.pisrs.configuration"/>
+        	<module name="sun.jdk"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>
