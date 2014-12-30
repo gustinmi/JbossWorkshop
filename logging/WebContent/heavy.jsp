@@ -7,7 +7,7 @@
 Some heavy logging started
 <%
 
-final int MAX = 10;
+final int MAX = 100;
 
 Logger log = Logger.getLogger("si.gustinmi");
 

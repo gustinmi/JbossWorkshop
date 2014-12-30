@@ -7,6 +7,5 @@
  <context-param>
   <param-name>static_url</param-name>
   <param-value>/assets/</param-value>
-  <!--param-value>/cluster-demo/</param-value-->
  </context-param>
 </web-app>
