@@ -22,7 +22,7 @@ import javax.net.ssl.X509TrustManager;
 
 public class Runner {
 
-	private static final String certificatePassword = "myPass";
+	private static final String certificatePassword = "p";
     private static String serverURL;
     private static KeyStore keyStore;
     private static SSLSocketFactory socketFactory;
@@ -37,7 +37,7 @@ public class Runner {
        keyStore = createKeyStore(jksPath);
        socketFactory = createSocketFactory();
        System.out.println("Keystore je:" + keyStore);
-       serverURL = "https://www.github.com"; 
+       serverURL = args[1]; 
        System.out.println("server je:" + serverURL);
        SSLUtilities.trustAllHostnames();
        SSLUtilities.trustAllHttpsCertificates();
