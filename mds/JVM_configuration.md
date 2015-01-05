@@ -32,3 +32,7 @@ Example of JVM settings for standalone.xml
 "-Dhttp.proxyHost=proxy.gov.si"																		#jvm params
 "-Dhttp.proxyPort=80" 
 
+Remote debugging
+-----------------------------
+
+JAVA_OPTS="-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"

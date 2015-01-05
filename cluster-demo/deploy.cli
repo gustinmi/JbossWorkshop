@@ -1,0 +1,7 @@
+batch
+
+deploy /home/jboss/code/JbossWorkshopMaster/cluster-demo/target/cluster-demo.war --force
+
+deployment-info
+
+run-batch
