@@ -23,4 +23,12 @@ gc-interval
 gc-algorithm
 
 
+Example of JVM settings for standalone.xml
+-------------------------
+
+./standalone.sh 
+
+"-Dconfig.path=C:/Program Files (x86)/Java/jboss-eap-6.1/modules/my/foo/configuration/main"       	#extra modules
+"-Dhttp.proxyHost=proxy.gov.si"																		#jvm params
+"-Dhttp.proxyPort=80" 
 

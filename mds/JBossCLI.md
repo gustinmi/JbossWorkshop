@@ -43,6 +43,7 @@ Example session
 
 	cd connector=http, :read-resource(include-runtime=true)      (vključi runtime statistike)
 
+7. /subsystem=web/connector=ajp:add(socket-binding=ajp, protocol="AJP/1.3", enabled=true)
 
 Example script
 --------------------
